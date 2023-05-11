@@ -25,9 +25,7 @@ class Solution(object):
         if n == 1:
           return 1
 
-        first = 1
-        second = 1
-        result = 1
+        first, second, result = 1, 1, 1
         for _ in range(2, n+1):
            result = first + second
            second = first
