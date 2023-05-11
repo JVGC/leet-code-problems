@@ -16,10 +16,27 @@ class Solution(object):
            hash_memo[i] = hash_memo[i-1]+ hash_memo[i-2]
 
         return hash_memo[n]
+    def climbStairsPointer(self, n: int) -> int:
+        """
+        :type n: int
+        :rtype: int
+        """
+
+        if n == 1:
+          return 1
+
+        first = 1
+        second = 1
+        result = 1
+        for _ in range(2, n+1):
+           result = first + second
+           second = first
+           first = result
+        return result
 
 solution = Solution()
-print(solution.climbStairs(2))
-print(solution.climbStairs(38))
+print(solution.climbStairsPointer(2))
+print(solution.climbStairsPointer(38))
 
 
 """
